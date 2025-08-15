@@ -1,0 +1,13 @@
+# Diretório de ambiente virtual
+venv/
+# Arquivos de configuração
+*.pyc
+__pycache__/
+# Arquivos sensíveis (não inclua chaves de API ou senhas no seu repositório)
+.env
+# Arquivos de logs
+*.log
+# Arquivos do sistema operacional
+.DS_Store
+# Arquivos gerados pelo editor
+.vscode/
