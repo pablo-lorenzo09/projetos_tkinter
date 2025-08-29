@@ -1,20 +1,20 @@
 import ttkbootstrap as tk
 
-class Janela_principal():
+class janela_principal():
     """Classe para a criação da janela principal"""
 
     def __init__(self):
 
         self.janela = tk.Window(themename="vapor")
 
-        janela.title("SUPER BOM DIA")
-        janela.geometry("800x600+100+50")
-        janela.resizable(False, False)
+        self.janela.title("SUPER BOM DIA")
+        self.janela.geometry("800x600+100+50")
+        self.janela.resizable(False, False)
 
-        janela.configure(bg="black")
+        self.janela.configure(bg="black")
 
 
-        label = tk.Label(janela, 
+        self.label = tk.Label(self.janela, 
                         text="Qual o seu nome?",
                         font=("Arial", 30),
                         foreground="white"
@@ -22,44 +22,44 @@ class Janela_principal():
 
         ##
 
-        label_b_dia = tk.Label (janela, 
+        self.label_b_dia = tk.Label (self.janela, 
                                 text = f"",
                                 font= ("Arial", 30),
                                 foreground = "white")
 
 
 
-        campo_texto = tk.Entry(janela)
+        self.campo_texto = tk.Entry(self.janela)
 
 
 
         #botao
 
-        botao = tk.Button (janela, 
+        self.botao = tk.Button (self.janela, 
                         text="clique em mim!",
-                        command= desejar_bom_dia,
+                        command= self.desejar_bom_dia,
                         style="danger")
 
 
 
         #COLOCANDO ICONE
-        janela.iconbitmap("icon/adobe.ico")
+        self.janela.iconbitmap("icon/adobe.ico")
 
 
-        label.pack()
-        campo_texto.pack()
-        botao.pack()
-        label_b_dia.pack(pady=20)
+        self.label.pack()
+        self.campo_texto.pack()
+        self.botao.pack()
+        self.label_b_dia.pack(pady=20)
 
-    def run():
+    def run(self):
         """Executa a janela"""
         #Loop da janela
-        janela.mainloop()
+        self.janela.mainloop()
 
 
     #função do botao
-    def desejar_bom_dia():
+    def desejar_bom_dia(self):
         """Essa função pega o nome digitado na caixa de texto de deseja um bom dia"""
         
-        nome = campo_texto.get()
-        label_b_dia.configure(text=f"Bom dia, {nome}!")
+        nome = self.campo_texto.get()
+        self.label_b_dia.configure(text=f"Bom dia, {nome}!")
