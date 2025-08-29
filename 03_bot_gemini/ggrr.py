@@ -1,9 +1,10 @@
 from google import genai
 
-# The client gets the API key from the environment variable `GEMINI_API_KEY`.
-client = genai.Client(api_key="AIzaSyB8IWUIm7eGnsx3Hs8VVcsKIde8uEFkEhM")
+client = genai.Client()
+chat = client.chats.create(model="gemini-2.5-flash")
 
-response = client.models.generate_content(
-    model="gemini-2.5-flash", contents="oi amigooooo"
-)
+response = chat.send_message("I have 2 dogs in my house.")
+print(response.text)
+
+response = chat.send_message("How many paws are in my house?")
 print(response.text)
