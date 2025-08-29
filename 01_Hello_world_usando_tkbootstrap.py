@@ -1,6 +1,7 @@
-import tkinter as tk
+import ttkbootstrap as tk
 
-janela = tk.Tk()
+janela = tk.Window(themename="vapor")
+
 janela.title("SUPER BOM DIA")
 janela.geometry("800x600+100+50")
 janela.resizable(False, False)
@@ -10,7 +11,6 @@ janela.configure(bg="black")
 
 label = tk.Label(janela, 
                  text="Qual o seu nome?",
-                 bg="black",
                  font=("Arial", 30),
                  foreground="white"
 )
@@ -19,7 +19,6 @@ label = tk.Label(janela,
 
 label_b_dia = tk.Label (janela, 
                         text = f"",
-                        bg= "black",
                         font= ("Arial", 30),
                         foreground = "white")
 
@@ -36,8 +35,10 @@ def desejar_bom_dia():
     label_b_dia.configure(text=f"Bom dia, {nome}!")
 #botao
 
-botao = tk.Button (janela, text="clique em mim!",
-                   command= desejar_bom_dia)
+botao = tk.Button (janela, 
+                   text="clique em mim!",
+                   command= desejar_bom_dia,
+                   style="danger")
 
 
 
@@ -49,9 +50,10 @@ janela.iconbitmap("icon/adobe.ico")
 
 
 label.pack()
-botao.pack()
 campo_texto.pack()
+botao.pack()
 label_b_dia.pack(pady=20)
+
 janela.mainloop()
 
 
