@@ -1,10 +1,10 @@
 import ttkbootstrap as tk
 
-class janela_principal():
+class Janela_principal():
     """Classe para a criação da janela principal"""
 
     def __init__(self):
-
+        
         self.janela = tk.Window(themename="vapor")
 
         self.janela.title("SUPER BOM DIA")
@@ -43,7 +43,7 @@ class janela_principal():
 
 
         #COLOCANDO ICONE
-        self.janela.iconbitmap("icon/adobe.ico")
+        self.janela.iconbitmap("adobe.ico")
 
 
         self.label.pack()
@@ -63,3 +63,4 @@ class janela_principal():
         
         nome = self.campo_texto.get()
         self.label_b_dia.configure(text=f"Bom dia, {nome}!")
+
