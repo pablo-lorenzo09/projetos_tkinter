@@ -1,27 +1,44 @@
 import tkinter as tk
 
-
-
 janela = tk.Tk()
-janela.title("Hello world ")
-label2 = tk.Label(janela, text=f"")
+janela.title("SUPER BOM DIA")
 janela.geometry("800x600+100+50")
 janela.resizable(False, False)
 
-janela.configure(bg="#FACADA")
+janela.configure(bg="black")
+
 
 label = tk.Label(janela, 
                  text="Qual o seu nome?",
-                 bg="red",
-                 font="papyrus",
-                 foreground="blue")
+                 bg="black",
+                 font=("Arial", 30),
+                 foreground="white"
+)
+
+##
+
+label_b_dia = tk.Label (janela, 
+                        text = f"",
+                        bg= "black",
+                        font= ("Arial", 30),
+                        foreground = "white")
+
+
 
 campo_texto = tk.Entry(janela)
 
-def acao_do_botao():
-    label2 = tk.Label(janela, text=f"Bom dia {campo_texto}")
 
-botao = tk.Button (janela, text="clique em mim!", command= acao_do_botao)
+#função do botao
+
+def desejar_bom_dia():
+    """Essa função pega o nome digitado na caixa de texto de deseja um bom dia"""
+    nome = campo_texto.get()
+    label_b_dia.configure(text=f"Bom dia, {nome}!")
+#botao
+
+botao = tk.Button (janela, text="clique em mim!",
+                   command= desejar_bom_dia)
+
 
 
 
@@ -34,8 +51,7 @@ janela.iconbitmap("icon/adobe.ico")
 label.pack()
 botao.pack()
 campo_texto.pack()
-label2.pack()
-
+label_b_dia.pack(pady=20)
 janela.mainloop()
 
 
