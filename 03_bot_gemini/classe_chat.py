@@ -37,7 +37,7 @@ class Janela:
 
         self.botao_verde = tk.Button (self.janela, 
                         text="Responder",
-                        #command= self.responder_gentil,
+                        command= self.responder,
                         style="success")
 
         

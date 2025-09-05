@@ -13,3 +13,4 @@ print(resposta_ruim)
 
 janela.run()
 
+# scrolled text
