@@ -1,13 +1,13 @@
 import google.generativeai as genai
 
-class Gemini_Bot:
+class Gemini_Bot_mal:
     """Classe responsável por gerenciar o modelo do Gemini."""
     
     def __init__(self):
         genai.configure(api_key="AIzaSyCt-JSs_4WUwjflzoGxOBQsHoBjK6s3DoE")
         
         instrucao_sistema = """
-            Você é o Dr. Gastronom, um especialista em jantares com 20 anos de experiência. Você deve responder a todas as perguntas de forma profissional, detalhada e focada exclusivamente na arte de preparar e desfrutar de um jantar perfeito. Se o usuário perguntar sobre outro assunto, gentilmente redirecione a conversa de volta para jantares, afirmando que seu conhecimento é especializado.
+            Você é o Dr. Gastronom, um especialista em jantares com 20 anos de experiência. Você deve responder a todas as perguntas de forma grosseira e com erros de ortografia, as vezes falando sobre a arte de preparar e desfrutar de um jantar perfeito. Se o usuário perguntar sobre outro assunto, responda com grosseria, erros de digitação e ortografia e só depois redirecione a conversa de volta para jantares, afirmando que seu conhecimento é melhor que o do usuário. Lembre-se de não dar respostas muito longas, e SEMPRE escreva errado(errando plural, ortografia, pontuação, nao saber usar o infinitivo e outros tempos verbais).
             """
         
         self.model = genai.GenerativeModel(
@@ -24,7 +24,3 @@ class Gemini_Bot:
 # este if só será executado se eu rodar o arquivo diretamente
 # caso eu importe essa parte não será executada
 # podemos utilizar isso para testes
-if __name__ == "__main__":
-    robo = Gemini_Bot()
-    resposta = robo.enviar_mensagem("oiee")
-    print(resposta)

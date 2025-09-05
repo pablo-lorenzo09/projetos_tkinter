@@ -1,4 +1,5 @@
 import ttkbootstrap as tk
+from classe_bot_gemini import Gemini_Bot
 
 class Janela:
     def __init__(self):
@@ -53,12 +54,33 @@ class Janela:
 
         
         self.botao_vermelho.pack()
-        self.botao_vermelho.place(x= 450,
+        self.botao_vermelho.place(x= 550,
                                 y= 250,
                                 width= 150,
                                 height= 70)
         
+        self.label_resposta = tk.Label(self.janela,
+                          text="",
+                          style = "success"
+                        )
+        
+        self.label_resposta.pack()
+        
+    #criando o objeto robo(instanciando a classe)
+
+        self.robo = Gemini_Bot()
+
+    def responder(self):
+        pergunta = self.campo_pergunta.get()
+        resposta = self.robo.enviar_mensagem(pergunta)
+        self.label_resposta.config(text=resposta)
+
+
     def run(self):
         """Executa a janela"""
         #Loop da janela
         self.janela.mainloop()
+    
+    
+    
+        
