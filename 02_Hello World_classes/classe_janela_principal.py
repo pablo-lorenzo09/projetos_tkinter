@@ -8,7 +8,7 @@ class Janela_principal():
         self.janela = tk.Window(themename="vapor")
 
         self.janela.title("SUPER BOM DIA")
-        self.janela.geometry("800x600+100+50")
+        self.janela.geometry("1000x800+450+50")
         self.janela.resizable(False, False)
 
         self.janela.configure(bg="black")

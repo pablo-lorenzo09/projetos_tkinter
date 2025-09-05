@@ -20,3 +20,11 @@ class Gemini_Bot:
         """Envia mensagem para o modelo e retorna a resposta."""
         response = self.chat.send_message(mensagem)
         return response.text
+
+# este if só será executado se eu rodar o arquivo diretamente
+# caso eu importe essa parte não será executada
+# podemos utilizar isso para testes
+if __name__ == "__main__":
+    robo = Gemini_Bot()
+    resposta = robo.enviar_mensagem("oiee")
+    print(resposta)
